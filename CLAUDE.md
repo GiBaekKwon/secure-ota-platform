@@ -22,6 +22,8 @@
 - AWS 액세스 키, 비밀번호, 인증서 개인키를 코드·커밋·채팅에 넣지 않는다 (환경변수 / GitHub Secrets / 로컬 프로필만 사용).
 - `terraform.tfstate`, `*.tfvars`(비밀 포함), `.terraform/`은 커밋하지 않는다.
 - 내 확인 없이 `terraform apply` / `destroy`를 실행하지 않는다.
+- AWS 리소스 생성·변경·삭제는 Terraform으로만 한다. 
+- AWS MCP 서버는 조회와 문서 참고 용도로만 쓴다.
 
 ## 디렉터리 구조 (예정)
 ```
