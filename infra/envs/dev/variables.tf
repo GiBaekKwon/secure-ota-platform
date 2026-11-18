@@ -21,3 +21,33 @@ variable "aws_profile" {
   type        = string
   default     = "ota"
 }
+
+variable "vpc_cidr" {
+  description = "VPC CIDR 대역"
+  type        = string
+  default     = "10.0.0.0/16"
+}
+
+variable "public_subnets" {
+  description = "퍼블릭 서브넷 (키 = 이름 접미사)"
+  type = map(object({
+    cidr = string
+    az   = string
+  }))
+  default = {
+    "public-a" = { cidr = "10.0.1.0/24", az = "ap-northeast-2a" }
+    "public-c" = { cidr = "10.0.2.0/24", az = "ap-northeast-2c" }
+  }
+}
+
+variable "private_subnets" {
+  description = "프라이빗 서브넷 (키 = 이름 접미사)"
+  type = map(object({
+    cidr = string
+    az   = string
+  }))
+  default = {
+    "private-a" = { cidr = "10.0.11.0/24", az = "ap-northeast-2a" }
+    "private-c" = { cidr = "10.0.12.0/24", az = "ap-northeast-2c" }
+  }
+}
